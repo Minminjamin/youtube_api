@@ -28,7 +28,7 @@ fetch(resultURL)
         }</h2>
         <div class="text">
           <p>${desc}</p>
-          <span>${data.snippet.publishedAt}</span>
+          <span>${data.snippet.publishedAt.split("T")[0]}</span>
         </div>
         <div class="pic">
           <img src='${data.snippet.thumbnails.standard.url}'/>
