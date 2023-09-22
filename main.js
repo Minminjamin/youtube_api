@@ -16,7 +16,9 @@ fetch(resultURL)
 
     json.items.map((data) => {
       let desc = data.snippet.description;
+      let date = data.snippet.publishedAt.split("T")[0];
 
+      date = date.split("-").join(".");
       desc.length > 120 ? (desc = desc.substr(0, 120) + "...") : desc;
 
       tags += `
@@ -28,7 +30,7 @@ fetch(resultURL)
         }</h2>
         <div class="text">
           <p>${desc}</p>
-          <span>${data.snippet.publishedAt.split("T")[0]}</span>
+          <span>${date}</span>
         </div>
         <div class="pic">
           <img src='${data.snippet.thumbnails.standard.url}'/>
