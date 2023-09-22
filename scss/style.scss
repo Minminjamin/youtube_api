@@ -49,10 +49,17 @@ aside {
   padding: 5vw;
   top: 0;
   padding: 0;
+
   .con {
     width: 100%;
     height: 100%;
     border: solid 1px;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   .close {
     font: bold 14px/1 "arial";
