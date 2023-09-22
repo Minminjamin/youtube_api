@@ -8,6 +8,6 @@ const resultURL = `${BASE_URL}?key=${YOUTUBE_API_KEY}&part=snippet&playlistId=${
 fetch(resultURL)
   .then((data) => data.json())
   .then((json) => {
-    console.log(json);
+    console.log(json.items);
   });
 // console.log(resultURL);
