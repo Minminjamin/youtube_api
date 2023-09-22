@@ -18,8 +18,13 @@ fetch(resultURL)
       tags += `
       <article>
         <h2>${data.snippet.title}</h2>
-        <p>${data.snippet.description}</p>
-        <span>${data.snippet.publishedAt}</span>
+        <div class="text">
+          <p>${data.snippet.description}</p>
+          <span>${data.snippet.publishedAt}</span>
+        </div>
+        <div class="pic">
+          <img src='${data.snippet.thumbnails.standard.url}'/>
+        </pic>
       </article>
       `;
     });
