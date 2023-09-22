@@ -14,13 +14,19 @@ fetch(resultURL)
   .then((json) => {
     let tags = "";
 
+    let text = "beef-lettuce-tomato";
+    text = text
+      .split("-") //배열 분리의 기준값
+      .map((el) => el.charAt(0).toUpperCase() + el.slice(1)) //분리된 문자값을 반복될면서 첫번째 글자만 대문자 변경 + 나머지 문자 이어붙이기
+      .join(" "); //각 단어들을 빈칸으로 합치기
+
+    console.log(text);
     json.items.map((data) => {
       let desc = data.snippet.description;
       let date = data.snippet.publishedAt.split("T")[0];
 
       date = date.split("-").join(".");
       desc.length > 120 ? (desc = desc.substr(0, 120) + "...") : desc;
-
       tags += `
       <article>
         <h2>${
